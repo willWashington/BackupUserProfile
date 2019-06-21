@@ -1,6 +1,6 @@
-<h1>Profile Backup Tool - _profBk.ps1<h1>
+<h1>Profile Backup Tool - _profBk.ps1</h1>
 
-###A Powershell script to backup user profiles from remote machines to your local machine.###
+<h3>A Powershell script to backup user profiles from remote machines to your local machine.</h3>
 
 This script will reach out to a remote machine via IP (logic to resolve IP from hostname included) and collect all of the various profile
 items from the user's local profile.
