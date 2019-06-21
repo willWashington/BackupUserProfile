@@ -3,7 +3,7 @@ $pc = Read-Host "Enter PC Name: "
 $ip = [System.Net.Dns]::GetHostAddresses($pc)
 Write-Host $ip
 
-Write-Host "Please be aware this process will not work if the DNS has not updated the IP of a machine." -ForegroundColor Magenta
+Write-Host "Please be aware this process will not work if the DNS does not store the current IP for the machine." -ForegroundColor Magenta
 
 Copy-Item -Path "\\$ip\c$\Users\$un\Contacts" -Recurse -Destination "c:\_profBkup\$un\" -Container -Verbose -Force
 Copy-Item -Path "\\$ip\c$\Users\$un\Desktop" -Recurse -Destination "c:\_profBkup\$un\" -Container -Verbose -Force
