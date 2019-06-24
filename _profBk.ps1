@@ -19,7 +19,7 @@ Copy-Item -Path "\\$ip\c$\Users\$un\appdata\roaming\microsoft\windows\recent\aut
 Copy-Item -Path "\\$ip\c$\Users\$un\AppData\Local\Google\Chrome\User Data\Default\bookmarks.bak" -Recurse -Destination "c:\_profBkup\$un\" -Container -Verbose -Force
 Copy-Item -Path "\\$ip\c$\Users\$un\AppData\Local\Google\Chrome\User Data\Default\bookmarks" -Recurse -Destination "c:\_profBkup\$un\" -Container -Verbose -Force
 
-Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | Format-Table –AutoSize > c:\_profBkup\$un\installedSoftware.txt -Verbose
-
+new-item -force -path "c:\_profBkup\$un\software.txt" -type file
+wmic /node:$ip product | Out-File "c:\_profBkup\$un\software.txt" -force
 pause
 
